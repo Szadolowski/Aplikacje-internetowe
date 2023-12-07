@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeria</title>
+    <link rel="stylesheet" href="styl7.css" />
+  </head>
+  <body>
+    <header><h2>Galeria miejsc ciekawych</h2></header>
+    <main><img src="lanzarotte.jpg" alt="galeria" id="galeria" /></main>
+    <section id="content">
+      <article id="lewy">
+        <h3>Przeglądaj zdjęcia</h3>
+        <img src="lanzarotte.jpg" alt="lanzarotte" id="1" class="IMG" />
+        <img src="pekin.jpg" alt="pekin" id="2" class="IMG" />
+        <img src="serengeti.jpg" alt="serengeti" id="3" class="IMG" />
+        <img src="wenecja.jpg" alt="wenecja" id="4" class="IMG" />
+        <img src="tajlandia.jpg" alt="tajlandia" id="5" class="IMG" />
+      </article>
+      <section id="prawy">
+        <h3>Obrazy w naszej galerii</h3>
+        <table>
+          <tr>
+            <td>Europa</td>
+            <td>Azja</td>
+            <td>Afryka</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+          </tr>
+        </table>
+        <p>Polub nas</p>
+        <img src="icon-off.png" id="icon" />
+        <a href="http://pixabay.com/" target="_blank" rel="noopener noreferrer"
+          >Odkryj więcej zdjęć</a
+        >
+      </section>
+    </section>
+    <footer>Autor: 000000</footer>
+
+    <script>
+      let zdj = document.querySelectorAll(".IMG");
+
+      zdj.forEach((elem) =>
+        elem.addEventListener("click", function () {
+          document.getElementById("galeria").src = elem.src;
+        })
+      );
+
+      let Icon = document.getElementById("icon");
+      let serce = 0;
+
+      Icon.addEventListener("click", function () {
+        if (serce == 0) {
+          Icon.src = "icon-on.png";
+          serce = 1;
+        } else {
+          Icon.src = "icon-off.png";
+          serce = 0;
+        }
+      });
+    </script>
+  </body>
+</html>

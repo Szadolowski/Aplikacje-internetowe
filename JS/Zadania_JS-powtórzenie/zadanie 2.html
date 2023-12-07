@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <script>
+        function funkcja()
+        {
+            var nazwisko = document.getElementById("nazwisko").value;
+            var Imie = document.getElementById("Imie").value;
+            var Rok_urodzenia = document.getElementById("Rok_urodzenia").value;
+            var Plec = document.getElementById("Plec").value;
+            var Wzrost = document.getElementById("Wzrost").value;
+            var Kraj = document.getElementById("Kraj").value;
+            var Zainteresowania = document.getElementById("Zainteresowania").value;
+
+            const now = new Date();
+
+            var data = now.getFullYear();
+
+            var wiek = data - Rok_urodzenia;
+
+            var tekst = wiek;
+
+            document.getElementById("tekst").innerHTML = nazwisko + " " + Imie + " to " + Plec + " ma " + wiek + " lat, " + Wzrost + "cm wzrostu, kraj zamieszkania to " + Kraj + ", posiada następujące zainteresowania: " + Zainteresowania + ". ";
+            //wiek, 
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div style="width: 400px;">
+        Nazwisko
+        <input style="float: right;" type="text" id="nazwisko">
+        <br>
+        <br>
+        Imię
+        <input style="float: right;" type="text" id="Imie">
+        <br>
+        <br>
+        Rok urodzenia
+        <input style="float: right;" type="number" id="Rok_urodzenia">
+        <br>
+        <br>
+        Płeć
+        <input style="float: right;" type="text" id="Plec">
+        <br>
+        <br>
+        Wzrost
+        <input style="float: right;" type="text" id="Wzrost">
+        <br>
+        <br>
+        Kraj
+        <input style="float: right;" type="text" id="Kraj">
+        <br><br>
+        Zainteresowania
+        <input style="float: right;" type="text" id="Zainteresowania">
+        <br><br>
+        <button onclick="funkcja()">Przycisk</button>
+        </div>
+    
+    <br>
+    <textArea type="text" id="tekst"></textArea>
+    
+</body>
+</html>

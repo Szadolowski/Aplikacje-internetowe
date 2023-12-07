@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie 5</title>
+  </head>
+  <body>
+    <h3>Dziś pormocja na strzyzenie włosów</h3>
+    Krótkie<input type="radio" name="rodzaj" id="K" /> <br />
+    Średnie<input type="radio" name="rodzaj" id="S" /> <br />
+    Półdługie<input type="radio" name="rodzaj" id="P" /> <br />
+    Długie<input type="radio" name="rodzaj" id="D" /> <br />
+    <input type="button" value="Odkryj promocję" onclick="Wykonaj()" />
+    <p id="napis"></p>
+  </body>
+  <script>
+    function Wykonaj() {
+      if (document.getElementById("K").checked == true) {
+        document.getElementById("napis").innerHTML = "Cena strzyzenia: " + 25;
+      } else if (document.getElementById("S").checked == true) {
+        document.getElementById("napis").innerHTML = "Cena strzyzenia: " + 30;
+      } else if (document.getElementById("P").checked == true) {
+        document.getElementById("napis").innerHTML = "Cena strzyzenia: " + 40;
+      } else if (document.getElementById("D").checked == true) {
+        document.getElementById("napis").innerHTML = "Cena strzyzenia: " + 50;
+      }
+    }
+  </script>
+</html>

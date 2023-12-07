@@ -1,0 +1,82 @@
+body{
+    margin: 0;
+}
+
+#main{
+    width: 100%;
+    height: 100vh;
+}
+
+#logo-serwisu p{
+    margin: 0px;
+}
+
+#logo-serwisu h1{
+    margin: 0px;
+}
+
+.uklad{
+    outline: 1px black solid;  
+    padding: 1%; 
+}
+
+#nawigacja{
+
+    width: 20%;
+}
+
+#glowny{
+
+    width: 50%;
+}
+
+#tabela_graczy{
+
+    width: 30%;
+}
+
+#stopka{
+    width: auto;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+    padding: 2px;
+}
+
+tr:nth-child(2) {
+    color: red;
+}
+tr:nth-child(3) {
+    color: green;
+}
+
+small span:nth-child(1){    
+    color: red;
+}
+
+small span:nth-child(2){    
+    color: green;
+}
+
+form{
+    margin: 2% 5%;
+    padding: 1%;
+    border: solid black 1px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#center{
+    display: flex;
+    align-items: center;
+}

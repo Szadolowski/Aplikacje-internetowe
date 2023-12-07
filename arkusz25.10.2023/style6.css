@@ -1,0 +1,72 @@
+*{
+    font-family: Georgia;
+}
+
+#lewy{
+    background-color: maroon;
+    color: white;
+    height: 600px;
+    width: 30%;
+}
+
+#Indigo{
+    background-color: Indigo;
+}
+#SteelBlue{
+    background-color: SteelBlue;
+}
+#Olive{
+    background-color: Olive;
+}
+
+
+#prawy{
+    background-color: maroon;
+    color: white;
+    height: 600px;
+    width: 70%;
+    overflow: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+#prawy img{
+    grid-area: 1 / 1 / 2 / 2;
+    padding: 10px;
+    border: 1px solid white;
+}
+
+#prawy ul{
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+#prawy p{
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+footer{
+    background-color: dimgray;
+    color: white;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+}
+
+p{
+    padding: 10px;
+}
+
+
+
+
+
+
+
+/*
+‒ Dla paragrafu: marginesy wewnętrzne 10 px
+‒ Dla obrazu: marginesy wewnętrzne 10 px, obramowanie linią ciągłą o grubości 1 px i białym kolorze
+‒ Dla przycisków zmieniających tło: kolor tła przycisku odpowiada jego podpisowi (np. kolor Indigo dla
+przycisku podpisanego Indigo) */

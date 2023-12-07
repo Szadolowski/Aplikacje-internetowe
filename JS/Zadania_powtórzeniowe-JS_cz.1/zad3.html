@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie 3</title>
+  </head>
+  <body>
+    <h3>Oblicz koszt paliwa</h3>
+    Rodzaj Paliwa 1-benzyna 2-olej napedowy <br />
+    <input type="number" id="Rodzaj" /> <br />
+    Ile litrow<input type="number" id="Litry" /> <br />
+    <input type="button" value="oblicz" onclick="oblicz()" />
+    <p id="suma"></p>
+  </body>
+  <script>
+    function oblicz() {
+      let rodzaj = document.getElementById("Rodzaj").value;
+      let litry = document.getElementById("Litry").value;
+      let suma = 0;
+      if (rodzaj == 1) {
+        suma = 4 * litry;
+        document.getElementById("suma").innerHTML =
+          "Koszt Paliwa: " + suma + "zł";
+      } else if (rodzaj == 2) {
+        suma = 3.5 * litry;
+        document.getElementById("suma").innerHTML =
+          "Koszt Paliwa: " + suma + "zł";
+      }
+    }
+  </script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie 9</title>
+  </head>
+  <body>
+    <h3>Obliczanie na podstawie powierzchni zapotrzebowania na farbę</h3>
+    <br />
+    Podaj powierzchnie: <input type="number" id="pow" /> <br />
+    <input type="button" id="btn" value="Oblicz" /> <br />
+    <p id="wypisz"></p>
+  </body>
+  <script>
+    let btn = document.getElementById("btn");
+    btn.addEventListener("click", wykonaj);
+
+    function wykonaj() {
+      let pow = parseInt(document.getElementById("pow").value);
+      let farba;
+      farba = pow / 4;
+      farba = Math.ceil(farba);
+      document.getElementById("wypisz").innerHTML =
+        "Liczba jednolitrowych puszek farby potrzebnych do pomalowania wynosi: " +
+        farba;
+    }
+  </script>
+</html>

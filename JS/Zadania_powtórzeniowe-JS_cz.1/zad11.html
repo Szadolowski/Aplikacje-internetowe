@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>zadanie 11</title>
+  </head>
+  <body>
+    <label for="numerKsztaltu">Numer kształtu: </label>
+    <input type="number" id="numerKsztaltu" required />
+    <br />
+    <p>Skomponuj swój kolor, podaj RGB:</p>
+    <label for="red">R:</label>
+    <input type="number" id="red" required />
+    <label for="green">G:</label>
+    <input type="number" id="green" required />
+    <label for="blue">B:</label>
+    <input type="number" id="blue" required />
+    <br /><br />
+    <button id="zamowienieButton">Zamówienie</button>
+    <p id="zamowienieTekst">Twoje zamówienie</p>
+    <button id="kolorButton">Kolor</button>
+
+    <script>
+      document
+        .getElementById("zamowienieButton")
+        .addEventListener("click", function () {
+          const numerKsztaltu = parseInt(
+            document.getElementById("numerKsztaltu").value
+          );
+          let ksztalt = "";
+
+          switch (numerKsztaltu) {
+            case 1:
+              ksztalt = "cytryna";
+              break;
+            case 2:
+              ksztalt = "liść";
+              break;
+            case 3:
+              ksztalt = "banan";
+              break;
+            default:
+              ksztalt = "inny";
+              break;
+          }
+
+          document.getElementById(
+            "zamowienieTekst"
+          ).textContent = `Twoje zamówienie to cukierek ${ksztalt}`;
+
+          const red = document.getElementById("red").value;
+          const green = document.getElementById("green").value;
+          const blue = document.getElementById("blue").value;
+          const kolor = `rgb(${red},${green},${blue})`;
+
+          document.getElementById("kolorButton").style.backgroundColor = kolor;
+        });
+    </script>
+  </body>
+</html>

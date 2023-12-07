@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zadanie 1</title>
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Oblicz pole trójkąta</h1>
+    <label>Liczba A<input type="number" name="LiczbaA" id="A" /></label>
+    <label>Liczba B<input type="number" name="LiczbaB" id="B" /></label>
+    <label>Liczba C<input type="number" name="LiczbaC" id="C" /></label>
+    <input type="button" value="oblicz" id="Start" />
+    <p id="wynik"></p>
+    <script>
+      const element = document.getElementById("Start");
+
+      element.addEventListener("click", function () {
+        let a = parseInt(document.getElementById("A").value);
+        let b = parseInt(document.getElementById("B").value);
+        let c = parseInt(document.getElementById("C").value);
+        let trojkat = 0;
+
+        let p = (a + b + c) / 2;
+        let P = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+
+        document.getElementById("wynik").innerHTML = "Wynik to:".P;
+
+        // if (a > b && a > c) {
+        //   if (a >= b + c) {
+        //     trojkat = 1;
+        //     alert("dziala");
+        //   }
+        // }
+      });
+    </script>
+  </body>
+</html>

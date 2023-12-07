@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie 10</title>
+  </head>
+  <body>
+    <h2>Oblicz ile litrow musisz zatankowac</h2>
+    <br />
+    dystans do przejechania w km: <br />
+    <input type="number" id="dystans" /><br />
+    Spalanie samochodu w l/100km: <br />
+    <input type="number" id="spalanie" /> <br />
+    <input id="oblicz" type="button" value="Oblicz" /> <br />
+    <p id="wypisz"></p>
+  </body>
+  <script>
+    let btn = document.getElementById("oblicz");
+    btn = addEventListener("click", oblicz);
+    function oblicz() {
+      let dystans = parseInt(document.getElementById("dystans").value);
+      let spalanie = parseInt(document.getElementById("spalanie").value);
+      let paliwo;
+      paliwo = (spalanie / 100) * dystans;
+      document.getElementById("wypisz").innerHTML =
+        "potrzebujesz: " + paliwo + " litrow paliwa";
+    }
+  </script>
+</html>

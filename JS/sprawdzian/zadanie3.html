@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zadanie 3</title>
+  </head>
+  <body>
+    <form>
+      <p>Imię:</p>
+      <input type="text" id="imie" />
+      <p>Nazwisko:</p>
+      <input type="text" id="nazwisko" />
+      <p>E-mail</p>
+      <input type="text" id="email" />
+      <p>Usługa</p>
+      <textarea name="" id="usluga"></textarea>
+      <label>
+        Zapoznałam/em się z regulaminem<input
+          type="checkbox"
+          name="check"
+          id="regulamin"
+        />
+      </label>
+      <input type="button" value="Prześlij" id="start" />
+      <p id="kontakt"></p>
+    </form>
+
+    <script>
+      document.getElementById("start").addEventListener("click", function () {
+        let Imie = document.getElementById("imie").value;
+        let Nazwisko = document.getElementById("nazwisko").value;
+        let Regulamin = document.getElementById("regulamin").checked;
+        let Usluga = document.getElementById("usluga").value;
+        let Kontakt = document.getElementById("kontakt");
+
+        if (Regulamin) {
+          Kontakt.innerHTML =
+            Imie.toUpperCase() +
+            " " +
+            Nazwisko.toUpperCase() +
+            "<br>Treść Twojej sprawy: " +
+            Usluga +
+            "<br>Na podany e-mail zostanie wysłana oferta.";
+        } else {
+          Kontakt.innerHTML = "Musisz zapoznać się z regulaminem";
+          Kontakt.style.color = "red";
+        }
+      });
+    </script>
+  </body>
+</html>

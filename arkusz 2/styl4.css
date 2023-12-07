@@ -1,0 +1,78 @@
+*{
+    font-family: Verdana ;
+    text-align: center;
+}
+
+body{
+    padding: 0;
+    height: 100vh;
+}
+
+/* header, section, footer{
+    outline: solid black 2px;
+    height: 20%;
+} */
+
+.contener{
+    display: flex;
+    flex-direction: column;
+}
+
+#main{
+    display: flex;
+    flex-direction: row;
+}
+
+.content{
+    width: 50%;
+    height: 100%;
+}
+
+td, table{
+    border: solid darkgreen 1px;
+    border-collapse: collapse;
+}
+
+table{
+    margin: auto;
+    width: 95%;
+}
+
+td, th{
+    padding: 20px 0 20px 0;
+}
+
+header{
+    background-color: darkgreen;
+    color: white;
+    padding: 5px;
+}
+
+#lewy{
+    background-color: palegreen;
+    width: 30%;
+    height: 500px;
+}
+
+#prawy{
+    background-color: honeydew;
+    width: 70%;
+    height: 400px;
+    padding-top: 100px;
+}
+
+footer{
+    background-color: palegreen;
+    padding: 3px;
+}
+
+button{
+    background-color: darkgreen;
+    color: white;
+    padding: 5px;
+}
+
+button:hover{
+    background-color: honeydew;
+    color: darkgreen;
+}

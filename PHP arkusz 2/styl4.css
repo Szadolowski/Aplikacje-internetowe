@@ -1,0 +1,32 @@
+* {
+  font-family: "Helvetica";
+}
+
+#Main {
+  display: flex;
+  flex-direction: row;
+}
+
+#Baner,
+#Stopka {
+  background-color: #af4448;
+  color: white;
+  text-align: 20px;
+}
+
+.Main {
+  background-color: #ffa4a2;
+  height: 650px;
+  width: 50%;
+}
+
+h4 {
+  margin: 0px;
+}
+
+#Button {
+  background-color: #af4448;
+  color: white;
+  padding: 5px;
+  margin: 10px;
+}

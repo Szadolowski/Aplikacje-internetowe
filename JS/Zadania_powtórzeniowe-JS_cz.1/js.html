@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js"></script>
+</head>
+<body>
+    <h1 id="head" style="color: red; background: yellow;">Moja strona</h1>
+    <p class="desc">1</p>
+    <p class="desc">2</p>
+    <p class="desc">3</p>
+    <p class="desc">4</p>
+    <p class="desc">5</p>
+    <p class="desc">6</p>
+
+    <input type="button" value="ABC" id="btn" onclick="suma()">
+    <input type="button" value="EFG" id="btn2">
+
+    <input type="number" id="la">   
+    <input type="number" id="lb">
+    <input type="checkbox" id="decyzja">Pole zaznaczone to suma, a odznaczone to różnica
+    <input type="button" value="OBLICZ!" id="send">   
+    <p id="wynik"></p>
+
+
+    <script>
+
+        function suma1() {
+            let chk = document.getElementById("decyzja").checked;
+            console.log(chk);
+            let li1 = parseInt(document.getElementById("la").value);
+            let li2 = parseInt(document.getElementById("lb").value);
+
+            // console.log(li1);
+            // console.log(li2);
+
+            // let suma = li1+li2;
+
+            let wynik = 0;
+
+            if(chk == true) {
+                wynik = li1+li2
+            } else {
+                wynik = li1-li2;
+            }
+
+            let p = document.getElementById("wynik");
+            p.innerHTML = "Wynik działania to " + wynik;
+        }
+
+        let send = document.getElementById("send");
+        send.onclick = suma1;
+
+
+        function suma() {
+            alert("Działam!");
+        }
+
+        let btn2 = document.getElementById("btn2");
+        btn2.onclick = suma;
+
+        btn2.addEventListener("click", function(){
+            alert("Obserwator!");
+        });
+
+        let head = document.getElementById("head");
+        console.log(head);
+        console.log(head.innerText);
+        console.log(head.style.color);
+
+        let desc = document.querySelector(".desc");
+        console.log(desc);
+        let desc1 = document.querySelectorAll(".desc");
+        console.log(desc1);
+
+        for(let i=0; i<desc1.length; i++) {
+            console.log(desc1[i].innerText);
+        }
+
+        console.log(desc1[3]);
+
+
+        let txt = "Ala ma kota";
+        let intZ = 10;
+        let intS = "10";
+
+        console.log(typeof txt);
+        console.log(typeof intZ);
+        console.log(typeof intS);
+
+        console.log(intZ);
+        console.log(intS);
+
+        //alert("Test");
+        //document.write("aaaaa");
+        // if(confirm("Czy jesteś pewien?")) {
+        //     alert("OK, idziemy dalej");
+        // } else {
+        //     alert("Zamykamy!");
+        // }
+        // let name = prompt("Podaj imię!", "Ania");
+        // console.log(name);
+
+        console.log(Math.ceil(4.2));
+        console.log(Math.floor(4.8));
+        console.log(Math.round(4.8));
+        console.log(Math.random());
+        console.log(Math.floor(Math.random()*10)+1);
+
+        let napis = "Ala MA KoTa";
+
+        console.log(napis.length);
+        console.log(napis.replace("KoTa", "Psa"));
+        console.log(napis.toLowerCase());
+        console.log(napis.toUpperCase());
+        console.log(napis.substring(0,3));
+
+    </script>
+
+</body>
+</html>

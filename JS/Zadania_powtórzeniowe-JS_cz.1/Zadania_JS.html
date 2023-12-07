@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Script</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <input type="button" value="zmiana na biały" id="kolor" />
+
+    <script>
+      kolor.onclick = zmiana;
+
+      function zmiana() {
+        if (kolor.value == "zmiana na biały") {
+          document.body.style.backgroundColor = "white";
+          document.body.style.color = "black";
+          kolor.value = "zmiana na czarny";
+          document.getElementById("tabela").style.color = "white";
+        } else {
+          document.body.style.backgroundColor = "black";
+          document.body.style.color = "white";
+          kolor.value = "zmiana na biały";
+        }
+      }
+    </script>
+
+    <!-- ZADANIE ! -->
+
+    <h3>ZADANIE 1 --></h3>
+    <br />
+
+    <h2>Ile będzie kosztowało moje wesele?</h2>
+    Podaj liczbę gości: <input type="number" name="Liczba" id="LiczbaGosci" />
+    <input type="checkbox" name="checkbox" id="WeselePoprawiny" />Wesele z
+    poprawinami?
+    <input type="button" value="Oblicz koszt" id="ObliczKoszt" />
+    <p id="Koszt"></p>
+
+    <script>
+      ObliczKoszt.onclick = zadanie1;
+
+      function zadanie1() {
+        let Goscie = 0 + document.getElementById("LiczbaGosci").value;
+        let checked = document.getElementById("WeselePoprawiny").checked;
+
+        let suma = 0;
+
+        if (checked) {
+          suma = Goscie * 100 * 1.3;
+        } else {
+          suma = Goscie * 100;
+        }
+
+        document.getElementById("Koszt").innerHTML = suma;
+      }
+    </script>
+
+    <!-- ZADANIE 2! -->
+
+    <h3>ZADANIE 2 --></h3>
+    <br />
+
+    <h3>Oblicz koszt dostawy</h3>
+    <label
+      >Jestem z Zielonej Góry<input
+        type="checkbox"
+        name="zielona gora"
+        id="ZielonaGora"
+    /></label>
+    <p>albo</p>
+    Podaj liczbę kilometrów od Zielonej Góry:
+    <input type="number" name="kilometry" id="kilometry" />
+    <input type="button" value="Oblicz" id="Oblicz" />
+    <p id="WynikKosztDostawy"></p>
+
+    <script>
+      Oblicz.onclick = KosztDostawy;
+
+      function KosztDostawy() {
+        let checked = document.getElementById("ZielonaGora").checked;
+        let kilometr = 0 + document.getElementById("kilometry").value;
+
+        if (checked == true) {
+          document.getElementById("WynikKosztDostawy").innerHTML =
+            "Dowieziemy Twoją pizzę za darmo";
+        } else {
+          document.getElementById("WynikKosztDostawy").innerHTML =
+            "Dowóz będzie Cię kosztował " + kilometr * 2 + " złotych";
+        }
+      }
+    </script>
+
+    <!-- ZADANIE 3! -->
+
+    <h3>ZADANIE 3 --></h3>
+    <br />
+
+    <h3>Oblicz koszt paliwa</h3>
+
+    Rodzaj paliwa (1-benzyna, 2-olej napędowy): <br />
+    <input type="number" name="Paliwo" id="Paliwo" /> <br />
+    Ile litrów <br />
+    <input type="number" name="Litry" id="Litry" /> <br />
+    <input type="button" value="Oblicz" id="ObliczPaliwo" />
+    <p id="KosztPaliwa"></p>
+
+    <script>
+      ObliczPaliwo.onclick = ObliczKosztPaliwa;
+
+      function ObliczKosztPaliwa() {
+        let paliwo = 0 + document.getElementById("Paliwo").value;
+        let litry = 0 + document.getElementById("Litry").value;
+        let koszt = document.getElementById("KosztPaliwa");
+
+        if (paliwo == 1) {
+          koszt.innerHTML = "koszt paliwa: " + litry * 4 + " zł";
+        } else if (paliwo == 2) {
+          koszt.innerHTML = "koszt paliwa: " + litry * 3.5 + " zł";
+        } else {
+          koszt.innerHTML = "koszt paliwa: 0 zł";
+        }
+      }
+    </script>
+
+    <!-- ZADANIE 4! -->
+
+    <h3>ZADANIE 4 --></h3>
+    <br />
+
+    <h2>Kontakt</h2>
+    <table id="tabela">
+      <tr>
+        <td>Imię:</td>
+        <td><input type="text" id="imie" /></td>
+      </tr>
+      <tr>
+        <td>Nazwisko:</td>
+        <td><input type="text" id="nazwisko" /></td>
+      </tr>
+      <tr>
+        <td>E-mail:</td>
+        <td><input type="email" id="nazwisko" /></td>
+      </tr>
+      <tr>
+        <td>Usługa:</td>
+        <td>
+          <textarea name="Usługa" id="usluga" cols="30" rows="10"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          Zapoznałam/em się z regulaminem
+          <input type="checkbox" name="regulamin" id="regulamin" />
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td style="display: flex; justify-content: space-between">
+          <input type="button" value="resetuj" id="resetuj" /><input
+            type="button"
+            value="Przeslij"
+            id="Przeslij"
+          />
+        </td>
+      </tr>
+    </table>
+    <p id="kontakt"></p>
+
+    <script>
+      Przeslij.onclick = sprawdzanie;
+
+      function sprawdzanie() {
+        let Imie = document.getElementById("imie").value;
+        let Nazwisko = document.getElementById("nazwisko").value;
+        let Regulamin = document.getElementById("regulamin").checked;
+        let Usluga = document.getElementById("usluga").value;
+        let Kontakt = document.getElementById("kontakt");
+
+        if (Regulamin) {
+          Kontakt.innerHTML =
+            Imie.toUpperCase() +
+            " " +
+            Nazwisko.toUpperCase() +
+            "<br>Treść Twojej sprawy: " +
+            Usluga +
+            "<br>Na podany e-mail zostanie wysłana oferta.";
+        } else {
+          Kontakt.innerHTML = "Musisz zapoznać się z regulaminem";
+          Kontakt.style.color = "red";
+        }
+      }
+    </script>
+
+    <!-- ZADANIE 5! -->
+
+    <h3>ZADANIE 5 --></h3>
+    <br />
+    <section id="zadanie5">
+      <h3>Dziś promocja na strzyżenie włosów</h3>
+      <section id="radio">
+        <label>Któtkie<input type="radio" name="nazwa" id="1" /></label>
+        <label>Średnie<input type="radio" name="nazwa" id="2" /></label>
+        <label>Pół Długie<input type="radio" name="nazwa" id="3" /></label>
+        <label>Długie<input type="radio" name="nazwa" id="4" /></label>
+      </section>
+      <input type="button" value="Odkryj promocję" id="odkryj" />
+      <p id="promocjeWynik"></p>
+    </section>
+
+    <script>
+      odkryj.onclick = Odkryj;
+
+      function Odkryj() {
+        if (document.getElementById("1").checked) {
+          document.getElementById("promocjeWynik").innerHTML =
+            "Cena strzyżenia: 25zł";
+        }
+        if (document.getElementById("2").checked) {
+          document.getElementById("promocjeWynik").innerHTML =
+            "Cena strzyżenia: 30zł";
+        }
+        if (document.getElementById("3").checked) {
+          document.getElementById("promocjeWynik").innerHTML =
+            "Cena strzyżenia: 40zł";
+        }
+        if (document.getElementById("4").checked) {
+          document.getElementById("promocjeWynik").innerHTML =
+            "Cena strzyżenia: 50zł";
+        }
+      }
+    </script>
+  </body>
+</html>

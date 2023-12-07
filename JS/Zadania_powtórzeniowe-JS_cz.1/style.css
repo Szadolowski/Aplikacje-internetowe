@@ -1,0 +1,29 @@
+body{
+    transition-property:background-color;
+    transition-duration:1s;
+
+    background-color: black;
+    color: white;
+}
+
+table, tr, td{
+    border: 1px solid white;
+    border-collapse: collapse;
+    width: auto;
+    height: auto;
+}
+
+#radio{
+    float: left;
+    display: flex;
+    flex-direction: column;
+}
+
+#zadanie5{
+    display: flex;
+    flex-direction: column;
+}
+
+#zadanie5 input{
+    width: fit-content;
+}

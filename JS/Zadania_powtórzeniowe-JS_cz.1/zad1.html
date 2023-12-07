@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie 1</title>
+  </head>
+  <body>
+    <h2>Ile bedzie kosztowalo moje wesele?</h2>
+    Podaj liczbę gości: <input type="number" id="goscie" /> <br />
+    <input type="checkbox" id="poprawiny" />Wesele z poprawinami? <br />
+    <input type="button" id="btn" value="Olicz cene" onclick="oblicz()" />
+    <p id="wynik"></p>
+  </body>
+  <script>
+    let btn = document.getElementById("btn");
+    btn.onclick = oblicz;
+    btn.addEventListener("click", oblicz);
+
+    function oblicz() {
+      let checkbox = document.getElementById("poprawiny");
+      if (checkbox.checked == true) {
+        let liczbaG = document.getElementById("goscie").value;
+        let koszt = 100;
+        koszt = liczbaG * koszt * 1.3;
+        document.getElementById("wynik").innerHTML =
+          "Koszt twojego wesela to" + koszt + "zł";
+      } else {
+        let liczbaG = document.getElementById("goscie").value;
+        let koszt = 100;
+        koszt = liczbaG * koszt;
+        document.getElementById("wynik").innerHTML =
+          "Koszt twojego wesela to" + koszt + "zł";
+      }
+    }
+  </script>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomocnik CSS</title>
+    <link rel="stylesheet" href="styl2.css" />
+  </head>
+  <body>
+    <section id="Container">
+      <header>
+        <section class="Baner"><h1>Pomocnik CSS</h1></section>
+        <section class="Baner">
+          <ul>
+            <li><a href="kolory.html">Kolory</a></li>
+            <li><a href="czcionki.html">Czcionki</a></li>
+            <li><a href="style.html">Style CSS</a></li>
+            <li>
+              <a href="https://www.w3schools.com/css/" target="_blank">Pomoc</a>
+            </li>
+          </ul>
+        </section>
+      </header>
+      <main>
+        <h2>Podaj składową H koloru w kodzie HSL</h2>
+        <p>
+          0 do 30 czerwienie, do 60 żółcie, do 150 zielenie, do 250 niebieskie,
+          do 360 fiolet i purpura
+        </p>
+        <img src="kolory.jpg" alt="Przestrzeń barw HSL" />
+        <input
+          type="number"
+          name="0-360"
+          id="0-360"
+          placeholder="0-360"
+          max="360"
+        />
+        <input type="button" value="Generuj paletę" id="Button" />
+        <table>
+          <tr>
+            <td colspan="4"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </main>
+      <footer>Autor:00000000000</footer>
+    </section>
+
+    <script>
+      let button = document.getElementById("Button");
+
+      button.addEventListener("click", function () {
+        let kolor = document.getElementById("0-360").value;
+
+        let tablica = document.querySelectorAll("td");
+
+        zmienna = 120;
+
+        for (const value of tablica) {
+          zmienna = zmienna - 20;
+          console.log(zmienna);
+          value.style.backgroundColor =
+            "hsl(" + kolor + ", " + zmienna + "%, 50%)";
+        }
+      });
+    </script>
+  </body>
+</html>

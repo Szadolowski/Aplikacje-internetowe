@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style w JavaScript</title>
+    <link rel="stylesheet" href="style6.css" />
+  </head>
+  <body>
+    <main>
+      <section id="lewy">
+        <h1>Konfigurator stylu</h1>
+        <p>Podaj kolor tła</p>
+        <input
+          type="button"
+          value="Indigo"
+          id="Indigo"
+          onclick="BackGroundChange('Indigo')"
+        />
+        <input
+          type="button"
+          value="SteelBlue"
+          id="SteelBlue"
+          onclick="BackGroundChange('SteelBlue')"
+        />
+        <input
+          type="button"
+          value="Olive"
+          id="Olive"
+          onclick="BackGroundChange('Olive')"
+        />
+        <p>Podaj kolor czcionki</p>
+        <select
+          name="KolorTekstu"
+          id="KolorTekstu"
+          onchange="TextColor(this.value)"
+        >
+          <option value="White">White</option>
+          <option value="Tan">Tan</option>
+          <option value="Bisque">Bisque</option>
+          <option value="Plum">Plum</option>
+        </select>
+        <p>Podaj rozmiar czcionki w procentach, np. 200%</p>
+        <input
+          type="text"
+          name="RozmiarCzcionki"
+          id="RozmiarCzcionki"
+          value="100%"
+          onfocusout="SizeChange(this.value)"
+        />
+        <p>Czy rysunek ma mieć ramkę?</p>
+        <label
+          ><input
+            type="checkbox"
+            name="Ramka"
+            id="Ramka"
+            checked
+            onchange="BorderStatus()"
+          />Rysuj ramkę</label
+        >
+        <p>Jaki jest typ punktora listy?</p>
+        <label
+          ><input
+            type="radio"
+            name="punktor"
+            id="dysk"
+            onclick="ListStyleType('disc')"
+          />dysk</label
+        ><br />
+        <label
+          ><input
+            type="radio"
+            name="punktor"
+            id="kwadrat"
+            onclick="ListStyleType('square')"
+          />kwadrat</label
+        ><br />
+        <label
+          ><input
+            type="radio"
+            name="punktor"
+            id="okrąg"
+            onclick="ListStyleType('circle')"
+          />okrąg</label
+        ><br />
+      </section>
+      <section id="prawy">
+        <img src="gibraltar.jpg" alt="półwysep Gibraltar" id="img" />
+        <ul id="Lista">
+          <li>element 1</li>
+          <li>element 2</li>
+          <li>element 3</li>
+        </ul>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </p>
+      </section>
+    </main>
+
+    <footer>Autor: 00000000000</footer>
+
+    <script>
+      const prawy = document.getElementById("prawy");
+
+      function BackGroundChange(kolor) {
+        prawy.style.backgroundColor = kolor;
+      }
+
+      function TextColor(kolor) {
+        prawy.style.color = kolor;
+      }
+
+      function SizeChange(Size) {
+        prawy.style.fontSize = Size;
+      }
+
+      function BorderStatus() {
+        if (!document.getElementById("Ramka").checked) {
+          document.getElementById("img").style.border = "0";
+        } else {
+          document.getElementById("img").style.border = "1px solid white";
+        }
+      }
+
+      function ListStyleType(Radio) {
+        document.getElementById("Lista").style.listStyleType = Radio;
+      }
+    </script>
+  </body>
+</html>

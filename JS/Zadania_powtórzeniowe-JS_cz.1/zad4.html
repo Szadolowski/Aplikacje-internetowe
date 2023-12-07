@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie 4</title>
+  </head>
+  <body>
+    <h2>Kontakt</h2>
+    <table>
+      <tr>
+        <td>Imie</td>
+        <td><input type="text" id="imie" /></td>
+      </tr>
+      <tr>
+        <td>Nazwisko</td>
+        <td><input type="text" id="nazwisko" /></td>
+      </tr>
+      <tr>
+        <td>E-mail</td>
+        <td><input type="email" id="mail" /></td>
+      </tr>
+      <tr>
+        <td>Usługa</td>
+        <td><input type="textarea" id="opis" /></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          Zapoznałam/em sie z regulaminem<input
+            type="checkbox"
+            id="regulamin"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <input type="reset" value="Resetuj" />
+          <input type="button" value="Przeslij" onclick="przeslij()" />
+        </td>
+      </tr>
+    </table>
+    <span style="color: red"><p id="napis"></p></span>
+    <p id="wypisanie"></p>
+    <p id="wypisanie1"></p>
+    <p id="wpisanie2"></p>
+    <p id="wpisanie3"></p>
+  </body>
+  <script>
+    function przeslij() {
+      let zgoda = document.getElementById("regulamin");
+      if (zgoda.checked == false) {
+        document.getElementById("napis").innerHTML =
+          "Musisz sie zapoznac z regulaminem";
+      } else if (zgoda.checked == true) {
+        let imie = document.getElementById("imie").value;
+        document.getElementById("wypisanie").innerHTML = imie.toUpperCase();
+        let nazwisko = document.getElementById("nazwisko").value;
+        document.getElementById("wypisanie1").innerHTML =
+          nazwisko.toUpperCase();
+        let usluga = document.getElementById("opis").value;
+        document.getElementById("wpisanie2").innerHTML =
+          "Treść twojej sprawy: " + usluga;
+        document.getElementById("wpisanie3").innerHTML =
+          "Na podany adres e-mail zostanie wyslana oferta";
+      }
+    }
+  </script>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="main">
+        <div class="uklad" id="logo-serwisu">
+            <img src="cs-go.jpg" alt="klan non omnis moriar">
+            <p><h1>Uwaga! Trwa rekrutacja! Wymagana ranga: silver.</h1></p>
+        </div>
+
+        <section class="content">
+            <div id="nawigacja" class="uklad">
+                 <ul>
+                    <li><a href="index.html">Storna główna</a></li>
+                    <li><a href="register.html">Dołącz do nas</a></li>
+                    <li><a href="http://bit.ly/streamy-csgo">Streamy z CS:GO</a></li>
+                 </ul> 
+            </div>
+            <div id="glowny" class="uklad">
+                <form action="new.php" method="post">
+                    <input type="text" name="nick" id="nick" placeholder="istniejący nick z CS">
+                    <input type="password" name="password" id="password">
+                    <input type="password" name="passwordCheck" id="passwordCheck">
+                    <input type="date" name="date" id="date">
+                    <label><input type="radio" name="gender" id="gander" checked> mężczyzna</label>
+                    <label><input type="radio" name="gender" id="gender"> kobieta</label>
+                    <label><input type="checkbox" name="regulamin" id="regulamin" checked>
+                        Akceptuję regulamin serwisu</label>
+                    <label><input type="checkbox" name="newsletter" id="newsletter">Wyrażam zgodę na otrzymywanie newslettera</label>
+                    <label>Ulubiona broń    
+                        <select name="gun" id="gun">
+                            <option value="FiveSeveN" >FiveSeveN</option>
+                            <option value="Desert Eagle" >Desert Eagle</option>
+                            <option value="PP-Bizon" >PP-Bizon</option>
+                            <option value="AWP" >AWP</option>
+                            <option value="MP9" >MP9</option>
+                            <option value="AK-47" >AK-47</option>
+                        </select>
+                    </label>
+                    <label id="center">Ulubione mapy
+                        <select name="map" id="map" multiple>
+                            <option value="Dust II">Dust II</option>
+                            <option value="Mirage">Mirage</option>
+                            <option value="Cache">Cache</option>
+                            <option value="Inferno">Inferno</option>
+                            <option value="Nuke">Nuke</option>
+                            <option value="Train">Train</option>
+                        </select>
+                    </label>
+                    <label id="center">Kilka słów o sobie
+                        <textarea name="opis" id="opis"></textarea>
+                        <small>Opisz swoją przygodę z CS:GO, dlaczego wybrałeś akurat nasz klan?</small>
+                    </label>
+                    <button type="submit">Zarejestruj się!</button>
+                </form>
+            </div>
+            <div id="tabela_graczy" class="uklad">
+                Aktualni gracze Non Omnis Moriar
+                <table>
+                    <tr><th>Nick</th><th>Płeć</th><th>Ulubiona broń</th></tr>
+                    <tr><td>Sn1p3RR</td><td>m</td><td>AWP</td></tr>
+                    <tr><td>Gh0st256</td><td>k</td><td>PP-Bizon</td></tr>
+                    <tr><td>K4w411</td><td>k</td><td>MP9</td></tr>
+                    <tr><td>SOI1d$nake</td><td>m</td><td>Deasert Eagle</td></tr>
+                </table>
+                <small>Legenda: <span>szef klanu</span>, <span>sekretarz drużyny</span></small>
+            </div>
+        </section>
+
+        <div id="stopka" class="uklad"> Na wojnie się wygrywa albo przegrywa, żyje albo umiera – a decyduje się to <em>w mgnieniu oka.</em><br>-<a href="https://pl.wikiquote.org/wiki/Douglas_MacArthur">Douglas MacArthur</a> 
+        </div>
+    </div>
+    
+</body>
+</html>

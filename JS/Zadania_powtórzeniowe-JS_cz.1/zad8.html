@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zadanie 8</title>
+  </head>
+  <body>
+    <h2>sprawdz cene swojej wizyty</h2>
+    <br />
+    Pilling<input type="checkbox" id="Pilling" /> <br />
+    Maska<input type="checkbox" id="Maska" /> <br />
+    Masaz twarzy<input type="checkbox" id="Masaz" /> <br />
+    Regulacja brwi<input type="checkbox" id="Regulacja" /> <br />
+    <input id="btn" type="button" value="Sprawdź cene" />
+    <p id="wypisz"></p>
+  </body>
+  <script>
+    let btn = document.getElementById("btn");
+    btn.addEventListener("click", wykonaj);
+
+    function wykonaj() {
+      let suma = 0;
+
+      if (document.getElementById("Pilling").checked) {
+        suma += 45;
+      }
+
+      if (document.getElementById("Maska").checked) {
+        suma += 30;
+      }
+
+      if (document.getElementById("Masaz").checked) {
+        suma += 20;
+      }
+
+      if (document.getElementById("Regulacja").checked) {
+        suma += 5;
+      }
+      document.getElementById("wypisz").innerHTML = "suma zabiegow: " + suma;
+    }
+  </script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie 2</title>
+  </head>
+  <body>
+    <h3>Oblicz koszt dostawy</h3>
+    <input type="checkbox" id="ZielonaG" />Jestem z Zielonej Góry <br />
+    <p>albo</p>
+    <input type="number" id="ilosc" />Podaj liczbe kilometrow do Zielonej Góry
+    <br />
+    <input type="button" value="oblicz" onclick="oblicz()" /> <br />
+    <p id="wynik"></p>
+  </body>
+
+  <script>
+    function oblicz() {
+      let checkbox = document.getElementById("ZielonaG");
+      if (checkbox.checked == true) {
+        document.getElementById("wynik").innerHTML =
+          "Dowieziemy ci pizze za darmo";
+      } else {
+        let Km = document.getElementById("ilosc").value;
+        let Km2 = Km * 2;
+        document.getElementById("wynik").innerHTML =
+          "Dowóz bedzie cie kosztowal: " + Km2 + " zł";
+      }
+    }
+  </script>
+</html>

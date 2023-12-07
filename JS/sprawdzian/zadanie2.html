@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zadanie 2</title>
+    <style>
+      #Blok {
+        background-color: red;
+        padding: 50px;
+      }
+      #paragraf {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="Blok">
+      <p id="paragraf">Rafał Curzydło</p>
+    </section>
+    <p>Kolor tła</p>
+    <input type="button" value="red" id="czerwony" onclick="tlo(this.value)" />
+    <input type="button" value="green" id="zielony" onclick="tlo(this.value)" />
+    <input
+      type="button"
+      value="blue"
+      id="niebieski"
+      onclick="tlo(this.value)"
+    />
+    <p>Kolor czcionki</p>
+    <input type="button" value="white" id="biały" onclick="kolor(this.value)" />
+    <input
+      type="button"
+      value="bisque"
+      id="bisque"
+      onclick="kolor(this.value)"
+    />
+    <input type="button" value="grey" id="szary" onclick="kolor(this.value)" />
+    <p>Rozmiar czcionki w procentach np. 200%</p>
+    <input type="text" value="100%" id="PRC" onchange="rozmiar(this.value)" />
+
+    <script>
+      const tlos = document.getElementById("Blok");
+      const tekst = document.getElementById("paragraf");
+
+      function tlo(p) {
+        tlos.style.background = p;
+      }
+
+      function kolor(k) {
+        tekst.style.color = k;
+      }
+
+      function rozmiar(r) {
+        tekst.style.fontSize = r;
+      }
+    </script>
+  </body>
+</html>

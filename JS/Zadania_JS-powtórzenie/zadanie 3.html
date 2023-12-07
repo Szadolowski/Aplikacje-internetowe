@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+            function funkcja()
+            {
+            var bloczek = document.getElementById('div1')
+
+            var wysokosc = document.getElementById('wysokosc').value;
+            if(wysokosc > 500)
+            {
+                wysokosc = wysokosc%500
+            }
+            var szerokosc = document.getElementById('szerokosc').value;
+            if(szerokosc > 1000)
+            {
+                szerokosc = szerokosc%1000
+            }
+            var wypelnienie = document.getElementById('wypelnienie').value;
+            var obramowanie = document.getElementById('obramowanie').value;
+            var szerokoscOBR = document.getElementById('szerokoscOBR').value;
+            var typOBR = document.getElementById('typOBR').value;
+            var X = document.getElementById('X').value;
+            if(X > (1000))
+            {
+                X = X%(1000);
+            }
+            var Y = document.getElementById('Y').value;
+            if(Y > (500))
+            {
+                Y = Y% (500);
+            }
+            
+            bloczek.style.height = wysokosc + "px";
+            bloczek.style.width = szerokosc + "px";
+            bloczek.style.background = wypelnienie;
+            bloczek.style.borderColor = obramowanie;
+            bloczek.style.borderWidth = szerokoscOBR + "px";
+            bloczek.style.borderStyle = typOBR;
+            bloczek.style.left = X + "px";
+            bloczek.style.top = Y + "px";
+            bloczek.style.position = "absolute"; 
+            }
+    </script>
+</head>
+<body>
+
+    <div style="border: medium solid gray; width: 1000px; height: 500px;">
+        <div id="div1"></div>
+    </div>
+    <div>
+        Wysokość:
+        <input type="number" id="wysokosc">
+        <br>
+        <br>
+        Szerokość:
+        <input  type="number" id="szerokosc">
+        <br>
+        <br>
+        Kolor wypełnienia:
+        <input  type="color" id="wypelnienie">
+        <br>
+        <br>
+        Kolor obramowania
+        <input  type="color" id="obramowanie">
+        <br>
+        <br>
+        Szerokość obramowania
+        <input  type="number" id="szerokoscOBR">
+        <br>
+        <br>
+        Typ obramowania
+        <select id="typOBR">
+            <option>dotted</option>
+            <option>dashed</option>
+            <option>solid</option>
+            <option>double</option>
+            <option>groove</option>
+            <option>ridge</option>
+            <option>inset</option>
+            <option>outset</option>
+          </select>
+        <br>
+        <br>
+        X
+        <input  type="number" id="X">
+        <br><br>
+        Y
+        <input  type="number" id="Y">
+        <br><br>
+        <button onclick="funkcja()">Przycisk</button>
+        </div>
+    
+    <br>
+</body>
+</html>
